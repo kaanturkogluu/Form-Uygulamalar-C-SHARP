@@ -1,0 +1,19 @@
+Studio Version : 2019 
+Freamwork:  .Net FreamWork 4.7.2
+SqlServer İsmi : .\SQLEXPRESS
+Backup Dosyası : telefon.bak
+
+-> Server ismini  .\SQLEXPRESS yaptıktan sonra telefon.bak dosyasını restore işlemi yapın 
+	Daha Sonra projeyi kullanmaya başlayabilirsiniz . 
+
+Giriş İçin: 
+Admin olarak giriş için : 
+ kullanıcı adı : admin 
+ sifre 		:1 
+
+
+Personel Olarak Giriş İçin : 
+kullanıcı adı : personel
+sifre 		:1 
+
+Admin default referans : 1234567890

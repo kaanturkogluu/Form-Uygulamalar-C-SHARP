@@ -1,0 +1,13 @@
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\bin\Debug\AyseNurProje.exe.config
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\bin\Debug\AyseNurProje.exe
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\bin\Debug\AyseNurProje.pdb
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.csprojAssemblyReference.cache
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.Form1.resources
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.Properties.Resources.resources
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.csproj.GenerateResource.cache
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.csproj.CoreCompileInputs.cache
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.exe
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.pdb
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.Genel_islemler.resources
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.Stok.resources
+C:\Users\kaan_\source\repos\AyseNurProje\AyseNurProje\obj\Debug\AyseNurProje.Satis_İslemlerş.resources

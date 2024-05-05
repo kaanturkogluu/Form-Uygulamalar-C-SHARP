@@ -1,0 +1,121 @@
+--Trigger -> Stok azaltma--
+
+create TRIGGER stokGuncellemesi
+ON Table_Satislar
+AFTER INSERT
+AS
+BEGIN
+    -- SatisAdeti'ni ve TelefonId'yi al
+    DECLARE @SatisAdeti INT, @TelefonId INT, @personelId INT;
+    SELECT @SatisAdeti = UrunAdeti, @TelefonId = TelefonId, @personelId =PersonelId
+    FROM inserted;
+
+    -- Table_Telefonlar tablosundaki StokAdeti'ni azalt
+    UPDATE Table_Telefonlar
+    SET StokAdeti = CASE
+                        WHEN StokAdeti > @SatisAdeti THEN StokAdeti - @SatisAdeti
+                        ELSE 0 -- Stok adedi 0'dan küçük olmasın
+                   END
+    WHERE TelefonId = @TelefonId;
+	 
+END;
+
+ --Trigger ->personel_sube_satis_guncellemesi--
+
+create TRIGGER personel_sube_guncellemesi
+ON [dbo].[Table_Satislar]
+AFTER INSERT
+AS
+BEGIN
+    -- Eklenen verileri geçici bir tabloya aktar
+    SELECT * INTO #InsertedData FROM inserted;
+
+    -- PersonelToplamSatis ve PersonelToplamSatisAdeti güncelleme işlemleri
+    UPDATE p
+    SET p.PersonelToplamSatis = p.PersonelToplamSatis + (SELECT (Convert(INT, t.Fiyat) * #InsertedData.UrunAdeti) FROM Table_Telefonlar t WHERE t.TelefonId = #InsertedData.TelefonId),
+        p.PersonelToplamSatisAdeti = p.PersonelToplamSatisAdeti + #InsertedData.UrunAdeti
+    FROM Table_Personeller p
+    INNER JOIN #InsertedData ON p.PersonelId = #InsertedData.PersonelId;
+
+    -- SubeToplamSatis ve SubeToplamSatisAdeti güncelleme işlemleri
+    UPDATE s
+    SET s.SubeToplamSatis = s.SubeToplamSatis + (#InsertedData.UrunAdeti * CONVERT(INT, t.Fiyat)),
+        s.SubeToplamSatisAdeti = s.SubeToplamSatisAdeti + #InsertedData.UrunAdeti
+    FROM Table_Subeler s
+    INNER JOIN #InsertedData ON s.SubeId = #InsertedData.SubeId
+    INNER JOIN Table_Telefonlar t ON t.TelefonId = #InsertedData.TelefonId;
+
+    -- Geçici tabloyu temizle
+    DROP TABLE #InsertedData;
+END;					
+				
+                   
+--Trigger ->musteri bilgiler--
+
+create TRIGGER MusteriBilgileriGuncelle
+ON [dbo].[Table_Satislar]
+AFTER INSERT
+AS
+BEGIN
+    -- Tablo değişikliklerini içeren inserted tablosundan gerekli verileri al
+    DECLARE @TelefonId INT, @UrunAdeti INT, @MusteriId INT;
+    SELECT @TelefonId = TelefonId, @UrunAdeti = UrunAdeti, @MusteriId = MusteriId
+    FROM inserted;
+
+    -- MusteriBakiye'yi güncelle
+     UPDATE Table_Musteriler
+    SET MusteriBakiye = case
+	when MusteriBakiye>0 Then	MusteriBakiye - (SELECT Fiyat FROM Table_Telefonlar WHERE TelefonId = @TelefonId) * @UrunAdeti
+	else 0 end
+		
+    WHERE MusteriId = @MusteriId;
+
+    -- MusteriToplamHarcama'yi güncelle
+    UPDATE Table_Musteriler
+    SET MusteriToplamHarcama = MusteriToplamHarcama + (SELECT Fiyat FROM Table_Telefonlar WHERE TelefonId = @TelefonId) * @UrunAdeti
+    WHERE MusteriId = @MusteriId;
+
+    -- MusteriAlimSatimAdeti'ni güncelle
+    UPDATE Table_Musteriler
+    SET MusteriAlimSatimAdeti = MusteriAlimSatimAdeti + @UrunAdeti
+    WHERE MusteriId = @MusteriId;
+END;
+
+
+
+--trigger -> personel sayisi azaltma--
+CREATE TRIGGER sube_personel_sayisi_azaltma
+ON Table_Personeller
+AFTER DELETE
+AS
+BEGIN
+    UPDATE Table_Subeler
+    SET SubePersonelSayisi = CASE
+        WHEN SubePersonelSayisi > 0 THEN SubePersonelSayisi - 1
+        ELSE 0
+        END
+    WHERE SubeId IN (SELECT PersonelCalistigiSubeId FROM DELETED);
+END;
+
+
+
+--trigger -> personel sayisi arttirma --
+
+ 
+
+create TRIGGER sube_personel_sayisi_arttırma
+ON Table_Personeller
+AFTER insert
+AS
+BEGIN
+    UPDATE Table_Subeler
+    SET SubePersonelSayisi = 
+        SubePersonelSayisi + 1
+       
+        
+    WHERE SubeId IN (SELECT PersonelCalistigiSubeId FROM inserted);
+END;
+
+
+
+

@@ -1,0 +1,189 @@
+
+
+CREATE TABLE Table_Ram_Bellek (
+    RamBellekId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+    RamBellek nvarchar(10) NOT NULL
+    );
+
+create table Table_Dahili_Depolama(
+DahiliDepolamaId int primary key  identity(1,1) not null , 
+DahiliDepolama nvarchar(10) not null
+);
+
+create table Table_Ekran_Boyutu( 
+ EkranBoyutuId int primary key identity(1,1) not null, 
+ EkranBoyutu nvarchar(10) not null );
+
+
+ create table Table_Marka(
+ MarkaId int primary key  identity(1,1) not null, 
+ Marka nvarchar(10) not null); 
+
+
+ create table Table_Batarya_Kapasitesi( 
+  BataryaKapasitesiId int primary key not null , 
+  BataryaKapasitesi nvarchar(10) not null
+  );
+create table Table_Kamera_Cozunurlugu(
+ KameraCozunurluguId int primary key identity(1,1) not null ,
+ KameraCozunurlugu nvarchar(10) not null );
+
+
+ create table Table_On_Kamera_Cozunurlugu(
+ OnKameraConuzurluguId int primary key identity(1,1) not null ,
+ OnKameraCozunurlugu nvarchar(10) not null );
+
+
+ create table Table_Ekran_Yenileme_Hizi(
+ EkranYenilemeHiziId int primary key identity(1,1) not null ,
+ EkranYenilemeHizi nvarchar(10) not null );
+
+ create table Table_Desteklenen_Frekans(
+ DesteklenenFrekansId int primary key identity(1,1) not null ,
+ DesteklenenFrekans nvarchar(10) not null );
+
+ create table Table_Hat_Sayisi(
+ HatSayisiId int primary key identity(1,1) not null ,
+ HatSayisi nvarchar(10) not null );
+
+
+ create table Table_Hizli_Sarj_Destegi(
+ HizliSarjDestegiId int primary key identity(1,1) not null ,
+ HizliSarjDestegi nvarchar(10) not null );
+
+ create table Table_Parmak_Izi_Okuyucu(
+ ParmakIziOkuyucuId int primary key identity(1,1) not null ,
+ParmakIziOkuyucu nvarchar(50) not null );
+
+create table Table_Renk(
+RenkId int primary key identity(1,1) not null ,
+ Renk nvarchar(50) not null );
+
+ create table Table_Kablosuz_Sarj_Destegi(
+KablosuzSarjDestegiId int primary key identity(1,1) not null ,
+ KablosuzSarjDestegi nvarchar(10) not null );
+
+
+ create table Table_Hafiza_Karti_Destegi(
+HafizaKartiDestegiId int primary key identity(1,1) not null ,
+ HafizaKartiDestegi nvarchar(10) not null );
+
+ create table Table_Isletim_Sistemi(
+IsletimSistemiId int primary key identity(1,1) not null ,
+ IsletimSistemi nvarchar(50) not null );
+
+
+create table Table_Cikis_Yili(
+CikisYiliId int primary key identity(1,1) not null ,
+ CikisYili int not null );
+
+ create table Table_Satislar(
+SatisId int primary key identity(1,1) not null ,
+TelefonId int not null ,
+PersonelId int  not null,
+MusteriId int not null, 
+SubeId int not null ,
+UrunAdeti int not null,
+SatisTarihi datetime default getDate(),
+
+);
+
+create table Table_Subeler (
+SubeId  int primary key identity(1,1) not null , 
+SubeAdi nvarchar(50) not null ,
+SubeAdres nvarchar(50) not null, 
+SubePersonelSayisi int  default 0 ,
+SubeToplamSatis int default 0  ,
+SubeToplamSatisAdeti int  default 0,
+SubeAktif bit default 1,
+ ); 
+
+
+create table Table_Personeller ( 
+PersonelId int not null identity(1,1), 
+PersonelAdi nvarchar(50) not null , 
+PersonelCalistigiSubeId int not null , 
+PersonelToplamSatis int default 0 ,
+PersonelBaslamaTarihi date default getDate() , 
+PersonelToplamSatisAdeti int default 0);
+
+create Table Table_Musteriler(
+MusteriId int identity(1,1) not null,
+MusteriAdi nvarchar(20) not null , 
+MusteriTelefonNo nchar(11)  not null , 
+MusteriTc nchar(11) not null , 
+MusteriAdres nvarchar(50) not null,
+MusteriBakiye int not null , 
+MusteriToplamHarcama int   default 0 , 
+MusteriAlimSatimAdeti int default 0 not null);
+
+create Table Table_Admin( 
+AdminId int identity(1,1) not null , 
+kullanici_adi nvarchar(20) not null , 
+sifre nvarchar(20) not null , 
+referans nchar(10) not null ,
+ekleyen_referans nchar(10) not null,
+IsAdmin bit default 0,
+);
+
+
+ 
+CREATE TABLE Table_Telefonlar (
+  TelefonId int PRIMARY KEY NOT NULL,
+  TelefonAdi nvarchar(50) NOT NULL,
+  OrnekResim varbinary(MAX),
+  RamBellekID int ,
+  DahiliDepolamaID int ,
+  EkranBoyutuID int ,
+  MarkaID int ,
+  BataryaKapasitesiID int ,
+  KameraCozunurluguID int ,
+  OnKameraCozunurluguID int ,
+  EkranYenilemeHiziID int ,
+  DesteklenenFrekansID int ,
+  HatSayisiID int ,
+  HizliSarjDestegiID int ,
+  ParmakIziOkuyucuID int ,
+  RenkID int ,
+  KablosuzSarjID int ,
+  HafizaKartiDestegiID int ,
+  IsletimSistemiID int ,
+  CikisYiliID int ,
+  GarantiSuresi nvarchar(50) ,
+  StokAdeti int ,
+  SiparisAdeti int ,
+  Fiyat decimal(7,2),
+  FOREIGN KEY (RamBellekID) REFERENCES Table_Ram_Bellek(RamBellekId),
+  FOREIGN KEY (DahiliDepolamaID) REFERENCES Table_Dahili_Depolama(DahiliDepolamaId),
+  FOREIGN KEY (EkranBoyutuID) REFERENCES Table_Ekran_Boyutu(EkranBoyutuId),
+  FOREIGN KEY (MarkaID) REFERENCES Table_Marka(MarkaId),
+  FOREIGN KEY (BataryaKapasitesiID) REFERENCES Table_Batarya_Kapasitesi(BataryaKapasitesiId),
+  FOREIGN KEY (KameraCozunurluguID) REFERENCES Table_Kamera_Cozunurlugu(KameraCozunurluguId),
+  FOREIGN KEY (OnKameraCozunurluguID) REFERENCES Table_On_Kamera_Cozunurlugu(OnKameraConuzurluguId ),
+  FOREIGN KEY (EkranYenilemeHiziID) REFERENCES Table_Ekran_Yenileme_Hizi(EkranYenilemeHiziId),
+  FOREIGN KEY (DesteklenenFrekansID) REFERENCES Table_Desteklenen_Frekans(DesteklenenFrekansId),
+  FOREIGN KEY (HatSayisiID) REFERENCES Table_Hat_Sayisi(HatSayisiId),
+  FOREIGN KEY (HizliSarjDestegiID) REFERENCES Table_Hizli_Sarj_Destegi(HizliSarjDestegiId),
+  FOREIGN KEY (ParmakIziOkuyucuID) REFERENCES Table_Parmak_Izi_Okuyucu(ParmakIziOkuyucuId),
+  FOREIGN KEY (RenkID) REFERENCES Table_Renk(RenkId),
+  FOREIGN KEY (KablosuzSarjID) REFERENCES Table_Kablosuz_Sarj_Destegi(KablosuzSarjDestegiId),
+  FOREIGN KEY (HafizaKartiDestegiID) REFERENCES Table_Hafiza_Karti_Destegi(HafizaKartiDestegiId),
+  FOREIGN KEY (IsletimSistemiID) REFERENCES Table_Isletim_Sistemi(IsletimSistemiId),
+  FOREIGN KEY ( CikisYiliID) REFERENCES  Table_Cikis_Yili(CikisYiliId));
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\bin\Debug\M_Kaya Kütüphane.exe.config
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\bin\Debug\M_Kaya Kütüphane.exe
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\bin\Debug\M_Kaya Kütüphane.pdb
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya Kütüphane.csproj.AssemblyReference.cache
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya Kütüphane.csproj.SuggestedBindingRedirects.cache
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Properties.Resources.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya Kütüphane.csproj.GenerateResource.cache
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya Kütüphane.csproj.CoreCompileInputs.cache
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya Kütüphane.exe
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya Kütüphane.pdb
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Admin_Kayit.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.AnaSayfa.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Admin_Sifre_Yenile.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Admin_Sifre_Sifirlama.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Kutuphane_Sorumlusu.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Sifre_Degistir.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Kitap_Admin.resources
+C:\Users\TÜRKOGLU\source\repos\M_Kaya Kütüphane\M_Kaya Kütüphane\obj\Debug\M_Kaya_Kütüphane.Mevcut_Kitaplar.resources

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telefon", "Telefon\Telefon.csproj", "{8D6DE92A-B7A8-4319-A211-9AC4E5222DDA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupTelefon", "SetupTelefon\SetupTelefon.vdproj", "{270E8A66-6AC7-4D2E-8854-39CD08E6835D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D6DE92A-B7A8-4319-A211-9AC4E5222DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6DE92A-B7A8-4319-A211-9AC4E5222DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6DE92A-B7A8-4319-A211-9AC4E5222DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6DE92A-B7A8-4319-A211-9AC4E5222DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270E8A66-6AC7-4D2E-8854-39CD08E6835D}.Debug|Any CPU.ActiveCfg = Debug
+		{270E8A66-6AC7-4D2E-8854-39CD08E6835D}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {554A2D4E-A973-4FEC-85AB-875E066ED77E}
+	EndGlobalSection
+EndGlobal
